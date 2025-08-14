@@ -1,0 +1,69 @@
+@import "../../Style/Shared.scss";
+
+.S2{
+    background-color: transparent;
+    z-index: 2;
+    position: relative;
+    margin-top: 100vh;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.arc {
+  background: $secondaryColor;
+}
+
+.Apropos{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: $secondaryColor;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+.infos{
+    width: 41%;
+    color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: left;
+    text-align: left;
+    height: 200px;
+    padding: 15px;
+    border-radius: 30px;
+    row-gap: 10px;
+
+    &:hover{
+        color: $secondaryColor;
+        background-color: $primaryColor;
+    }
+    h3{
+        margin: 0;
+        font-size: 30px;
+    }
+    p{
+        margin: 0;
+        font-family: "inter", sans-serif;
+        font-size: 18px;
+    }
+}
+.contact{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.title{
+    color: $primaryColor;
+    font-family: "Anton", sans-serif;
+    font-size: 48px;
+    margin: 0;
+    text-align: left;
+}

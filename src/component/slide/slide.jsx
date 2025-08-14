@@ -1,0 +1,51 @@
+import "../slide/slide.scss"
+import git from "../../assets/github.svg"
+import {slider} from "../../Data/slider.js"
+import { useEffect, useState } from "react"
+
+function Slide() {
+    const [index , setindex] = useState(2)
+    const next = () => setindex(prev =>{ 
+        const newIndex = prev - 1
+        return newIndex < 0 ? slider.length - 1 : newIndex
+    })
+
+    useEffect(() => {
+        const interval = setInterval(next, 5000)
+        return () => clearInterval(interval)
+    },[])
+    return(
+        <div className="slide">
+            <h1 className="main-title"><span>DECOUVREZ</span> MON TRAVAIL ET MES RÉALISATIONS <span>DECOUVREZ</span> MON TRAVAIL ET MES RÉALISATIONS</h1>
+            <h2 className="main-title transparent"><span>DECOUVREZ</span> MON TRAVAIL ET MES RÉALISATIONS <span>DECOUVREZ</span> MON TRAVAIL ET MES RÉALISATIONS</h2>
+            <div className="slider"
+            style={{
+                transform:`translateX(-${index * 100}%)`
+            }}
+            >
+                {slider.map(slide =>(
+                    <div key={slide.id} className="diapo">
+                    <img  src={slide.image} alt="" className="slide-img"/>
+                    </div>
+                ))}
+            </div>
+            <div className="infosBar">
+                <div className="slideTitle"style={{
+                        transform:`translateY(-${index * 72}px)`
+                    }}>
+                    {slider.map(slide =>(
+                    <h2 key={slide.id + slide.title}className="">{slide.title}</h2>
+                ))}
+                </div>
+                <div className="nav">
+                    <a href="">A-propos</a>
+                    <a href="">Projet</a>
+                    <span>Fr/En</span>
+                    <img src={git} alt="" className="LGgit"/>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Slide

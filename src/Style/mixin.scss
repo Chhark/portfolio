@@ -1,0 +1,13 @@
+@import "./variables";
+@import "./Font.scss";
+
+@mixin mainTitle {
+    color: $secondaryColor;
+    -webkit-text-stroke: 4px $secondaryColor;
+    font-family: 'Anton' , sans-serif;
+    font-size: 210px;
+    white-space: nowrap;
+    margin: 0;
+    line-height: 186px;
+    position: absolute;
+}
