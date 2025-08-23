@@ -3,7 +3,8 @@
 .S2{
     background-color: transparent;
     z-index: 2;
-    position: relative;
+    position: sticky;
+    top: 0;
     margin-top: 100vh;
     height: 100vh;
     padding: 20px;
@@ -66,4 +67,23 @@
     font-size: 48px;
     margin: 0;
     text-align: left;
+}
+
+@media (max-width: 768px){
+    .S2{
+        width: 100vw;
+        padding: 0;
+    }
+    .Apropos{
+        flex-direction:column ;
+        width: 100vw;
+        gap: 0;
+    }
+    .infos{
+        width: 90%;
+        height: auto;
+    }
+    .title{
+        margin-left: 20px;
+    }
 }

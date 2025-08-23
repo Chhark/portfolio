@@ -14,6 +14,13 @@ function Slide() {
         const interval = setInterval(next, 5000)
         return () => clearInterval(interval)
     },[])
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+    const updateWidth = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+    }, []);
     return(
         <div className="slide">
             <h1 className="main-title"><span>DECOUVREZ</span> MON TRAVAIL ET MES RÉALISATIONS <span>DECOUVREZ</span> MON TRAVAIL ET MES RÉALISATIONS</h1>
@@ -37,12 +44,21 @@ function Slide() {
                     <h2 key={slide.id + slide.title}className="">{slide.title}</h2>
                 ))}
                 </div>
-                <div className="nav">
+                {width > 768 ? (<div className="nav">
                     <a href="">A-propos</a>
                     <a href="">Projet</a>
                     <span>Fr/En</span>
                     <img src={git} alt="" className="LGgit"/>
-                </div>
+                </div>) : (
+                <div className="nav">
+                    <div className="burger"></div>
+                    <div>
+                        <a href="">A-propos</a>
+                    <a href="">Projet</a>
+                    <span>Fr/En</span>
+                    <img src={git} alt="" className="LGgit"/>
+                    </div>
+                </div>)}
             </div>
         </div>
     )

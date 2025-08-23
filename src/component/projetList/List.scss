@@ -1,0 +1,86 @@
+@import "../../Style/Shared.scss";
+
+.filterList{
+    display: flex;
+    flex-direction: column;
+    align-items:center ;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tagList{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tag{
+    border-radius: 50px;
+    border: solid 2px $secondaryColor;
+    color: $secondaryColor;
+    width: auto;
+    padding: 5px 10px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.projetList{
+    max-width: 1200px;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    gap: 20px;
+}
+.projet{
+    width: 570px;
+    display: flex;
+    flex-direction: column;
+
+    &Img{
+        width: 525px;
+        height: 270px;
+        object-fit: cover;
+        align-self: flex-start;
+    }
+    h3{
+        margin: 0;
+        text-align: left;
+        color: $primaryColor;
+    }
+    &Title{
+        margin-top:-24px ;
+        border-radius: 50px;
+        background-color: $secondaryColor;
+        width: 525px;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 768px){
+    .tagList{
+        flex-wrap: wrap;
+    }
+    .projetList{
+        width: 100%;
+    }
+    .projet{
+        width: 100%;
+
+        &Img{
+            width: 90%;
+            height: auto;
+        }
+        &Title{
+            width: 90%;
+        }
+    }
+    .filterList{
+        padding: 20px;
+    }
+    
+}

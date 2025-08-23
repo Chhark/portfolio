@@ -1,0 +1,21 @@
+@import "../../Style/Shared.scss";
+
+.S3{
+    position: relative;
+    z-index: 3;
+    background-color: $primaryColor;
+    height: 100vh;
+    margin-top: 30vh;
+    padding: 20px;
+    box-sizing: border-box;
+
+    h2{
+        color: $secondaryColor;
+    }
+}
+
+@media (max-width: 768px) {
+    .S3{
+        padding: 0;
+    }
+}

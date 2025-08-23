@@ -1,20 +1,32 @@
 import { useState } from "react"
-import slider from "../../Data/slider"
+import {slider} from "../../Data/slider"
+import "./List.scss"
 
-function projectFilter() {
-    const Tag = [...new Set(slider.flatMap(item => item.Tag))]
+function ProjectFilter() {
+    const Tag = ["all" , ...new Set(slider.flatMap(item => item.Tag))]
     console.log(Tag)
-    const [projectList , SetProjectList] = useState(slider)
+    const [filter , Setfilter] = useState("all")
+    const fiteredList = filter === "all" ? slider : slider.filter(projet => projet.Tag.includes(filter))
     return(
-        <div>
-            <div>
+        <div className="filterList">
+            <div className="tagList">
                 {Tag.map(tag =>(
-                    <div>{tag}</div>
+                    <div key={tag} onClick={() => Setfilter(tag)} className="tag">{tag}</div>
                 ))}
             </div>
-            
+            <div className="projetList">
+                {fiteredList.map(projet =>(
+                    <div key={projet.title} className="projet">
+                        <img src={projet.image} alt={projet.title} className="projetImg"/>
+                        <div className="projetTitle">    
+                            <h3>{projet.title}</h3>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
         </div>
     )
 }
 
-export default projectFilter
+export default ProjectFilter

@@ -18,7 +18,25 @@
   text-align: center;
 }
 
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 0; /* largeur à 0px */
+  background: transparent; /* fond transparent */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none; /* pas de barre */
+}
+
+
 body{
   margin: 0;
   overflow-x: hidden;
+}
+
+@media (max-width: 768px){
+  :root , #root ,body ,html{
+    width: 100%;
+  }
 }

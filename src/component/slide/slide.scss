@@ -3,12 +3,14 @@
 .slide{
    position: fixed;
    width: 100%;
+   max-width: 100vw;
    background-color: $primaryColor;
    min-height: 100vh;
    max-height: 100vh;
    z-index: 1;
    top: 0;
    left: 0;
+   overflow: hidden;
 
    &-img{
       margin-top: 10vh;
@@ -99,5 +101,11 @@ a{
    }
    100%{
       transform: translateX(-50%);
+   }
+}
+
+@media (max-width : 768px){
+   .slide-img{
+      object-fit: cover;
    }
 }
