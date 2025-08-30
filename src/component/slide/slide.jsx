@@ -1,5 +1,6 @@
 import "../slide/slide.scss"
 import git from "../../assets/github.svg"
+import menu from "../../assets/menu.svg"
 import {slider} from "../../Data/slider.js"
 import { useEffect, useState } from "react"
 
@@ -11,10 +12,11 @@ function Slide() {
     })
 
     useEffect(() => {
-        const interval = setInterval(next, 5000)
+        const interval = setInterval(next, 6000)
         return () => clearInterval(interval)
     },[])
     const [width, setWidth] = useState(window.innerWidth);
+    const [toggleMenu, UpdateToggleMenu] = useState(false);
 
     useEffect(() => {
     const updateWidth = () => setWidth(window.innerWidth);
@@ -51,13 +53,13 @@ function Slide() {
                     <img src={git} alt="" className="LGgit"/>
                 </div>) : (
                 <div className="nav">
-                    <div className="burger"></div>
-                    <div>
+                    <div className={toggleMenu? "navMobile active" : "navMobile"}>
                         <a href="">A-propos</a>
-                    <a href="">Projet</a>
-                    <span>Fr/En</span>
-                    <img src={git} alt="" className="LGgit"/>
+                        <a href="">Projet</a>
+                        <span>Fr/En</span>
+                        <img src={git} alt="" className="LGgit"/>
                     </div>
+                    <img className="burger" src={menu} alt="" onClick={() => UpdateToggleMenu(!toggleMenu)}  />
                 </div>)}
             </div>
         </div>
