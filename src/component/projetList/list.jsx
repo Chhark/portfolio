@@ -1,6 +1,7 @@
 import { useState } from "react"
 import {slider} from "../../Data/slider"
 import "./List.scss"
+import { Link } from "react-router-dom"
 
 function ProjectFilter() {
     const Tag = ["all" , ...new Set(slider.flatMap(item => item.Tag))]
@@ -16,12 +17,12 @@ function ProjectFilter() {
             </div>
             <div className="projetList">
                 {fiteredList.map(projet =>(
-                    <div key={projet.title} className="projet">
+                    <Link key={projet.title} to={`/portfolio/projet/${projet.title}`} className="projet">
                         <img src={projet.image} alt={projet.title} className="projetImg"/>
                         <div className="projetTitle">    
                             <h3>{projet.title}</h3>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 

@@ -18,7 +18,8 @@
       z-index: 2;
       position: relative;
       height: 80vh;
-      object-fit:contain;
+      object-fit:cover;
+      object-position: top;
       background-color: #fff;
    }
 }
@@ -33,7 +34,7 @@
 }
 
 .infosBar{
-   height: 8vh;
+   height: 10vh;
    width: 100%;
    overflow: hidden;
    display: flex;
@@ -147,6 +148,7 @@ a{
    .slideTitle{
       width: 100%;
       z-index: 3;
+      margin-top: 10px;
    }
    .nav{
       position: absolute;
@@ -154,7 +156,64 @@ a{
       display: flex;
       flex-direction: column;
       align-items: end;
-      bottom: calc(8vh - 50px);
+      bottom: calc(7.5vh - 50px);
+      padding: 0;
+      z-index: 3;
+   }
+   .burger{
+      width: 50px;
+      margin-right: 20px;
+      z-index: 6;
+   }
+}
+@media (max-width : 1024px){
+   .slide-img{
+      object-fit: cover;
+      width: auto;
+      height: 90vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      //object-position: left center;
+      animation: imgScroll 5s linear infinite;
+   }
+   .diapo{
+      height: 93vh;
+   }
+   .nav{
+
+   }
+   .navMobile{
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      width: 100vw;
+      min-width: 100vw;
+      background-color: $primaryColor;
+      transition:transform 0.5s ease-in-out;
+      transform:translateY(calc(220px + 9vh)) ;
+      padding: 20px;
+      z-index: 2;
+   }
+   .active{
+      transform:translateY(3px) ;
+
+   }
+   .infosBar{
+      max-height: 91px;
+   }
+   .slideTitle{
+      width: 100%;
+      z-index: 3;
+      margin-top: 8px;
+   }
+   .nav{
+      position: absolute;
+      right: 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      bottom: calc(5.5vh - 50px);
       padding: 0;
       z-index: 3;
    }

@@ -5,7 +5,7 @@ import {slider} from "../../Data/slider.js"
 import { useEffect, useState } from "react"
 
 function Slide() {
-    const [index , setindex] = useState(2)
+    const [index , setindex] = useState(1)
     const next = () => setindex(prev =>{ 
         const newIndex = prev - 1
         return newIndex < 0 ? slider.length - 1 : newIndex
@@ -46,18 +46,20 @@ function Slide() {
                     <h2 key={slide.id + slide.title}className="">{slide.title}</h2>
                 ))}
                 </div>
-                {width > 768 ? (<div className="nav">
-                    <a href="">A-propos</a>
-                    <a href="">Projet</a>
-                    <span>Fr/En</span>
+                {width > 1024 ? (<div className="nav">
+                    <a href="#Apropos">A-propos</a>
+                    <a href="#projet">Projet</a>
+                    {/* <span>Fr/En</span> */}
                     <img src={git} alt="" className="LGgit"/>
                 </div>) : (
                 <div className="nav">
                     <div className={toggleMenu? "navMobile active" : "navMobile"}>
-                        <a href="">A-propos</a>
-                        <a href="">Projet</a>
-                        <span>Fr/En</span>
+                        <a href="#Apropos">A-propos</a>
+                        <a href="#projet">Projet</a>
+                        {/* <span>Fr/En</span> */}
+                        <a href="https://github.com/Chhark">
                         <img src={git} alt="" className="LGgit"/>
+                        </a>
                     </div>
                     <img className="burger" src={menu} alt="" onClick={() => UpdateToggleMenu(!toggleMenu)}  />
                 </div>)}

@@ -49,6 +49,9 @@
         margin: 0;
         text-align: left;
         color: $primaryColor;
+        font-size: 19px;
+        font-weight: 700;
+        font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     }
     &Title{
         margin-top:-24px ;
@@ -70,6 +73,37 @@
     }
     .projet{
         width: 100%;
+
+        &Img{
+            width: 90%;
+            height: auto;
+        }
+        &Title{
+            width: 90%;
+        }
+    }
+    .filterList{
+        padding: 20px;
+    }
+    
+}
+@media (max-width: 1024px){
+    .tagList{
+        flex-wrap: wrap;
+        font-size: 20px;
+    }
+    .tag{
+        font-size: 25px;
+    }
+    .projetList{
+        margin-top: 40px;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+    .projet{
+        width: 90%;
 
         &Img{
             width: 90%;

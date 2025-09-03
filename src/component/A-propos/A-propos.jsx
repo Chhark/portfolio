@@ -2,7 +2,7 @@ import "./A-propos.scss"
 
 function Apropos() {
     return(
-        <section className="S2 arc">
+        <section className="S2 arc" id="Apropos">
             <h2 className="title">A-propos</h2>
         <div className="Apropos">
             <div className="infos">
@@ -22,9 +22,9 @@ function Apropos() {
             <div className="infos">
                 <h3>contact</h3>
                 <div className="contact">
-                    <p>Linkedin</p>
-                    <p>GitHub</p>
-                    <p>Discord</p>
+                    <a href="https://www.linkedin.com/in/kieran-vilain/">Linkedin</a>
+                    <a href="https://github.com/Chhark">GitHub</a>
+                    <a href="mailto:kieran@agence1400.fr">Mail</a>
                 </div>
             </div>
         </div>
