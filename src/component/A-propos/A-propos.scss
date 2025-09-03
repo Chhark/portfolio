@@ -50,10 +50,11 @@
         margin: 0;
         font-size: 30px;
     }
-    p{
+    p , a{
         margin: 0;
         font-family: "inter", sans-serif;
         font-size: 18px;
+        color: $primaryColor;
     }
 }
 .contact{

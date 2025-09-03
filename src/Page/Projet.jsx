@@ -20,7 +20,7 @@ function Projet() {
 
     return(
         <div className="Pprojet">
-            <img src={width > 768 ? projet.image : projet.Mimage } alt="" className="PprojetImg"/>
+            <img src={width > 1024 ? projet.image : projet.Mimage } alt="" className="PprojetImg"/>
             <div className="PprojetTexte">
                 <h1 className="PprojetTitle">{projet.title}</h1>
                 <div className="tagList">

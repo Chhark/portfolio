@@ -50,7 +50,9 @@ function Slide() {
                     <a href="#Apropos">A-propos</a>
                     <a href="#projet">Projet</a>
                     {/* <span>Fr/En</span> */}
-                    <img src={git} alt="" className="LGgit"/>
+                    <a href="https://github.com/Chhark">
+                        <img src={git} alt="" className="LGgit"/>
+                    </a>
                 </div>) : (
                 <div className="nav">
                     <div className={toggleMenu? "navMobile active" : "navMobile"}>
