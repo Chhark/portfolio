@@ -1,0 +1,33 @@
+.BottomBar{
+    background-color: #FEEAA1;
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-power{
+    background-color: #ffd37b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow:0 6px 0 0 #9e8249;
+    transition: all 0.2s;
+}
+.btn-power:hover{
+    transform: translateY(-2px);
+    box-shadow:0 8px 0 0 #9e8249 ;
+}
+.btn-power:active{
+    box-shadow:0 4px 0 0 #9e8249 ;
+    transform: translateY(2px);
+}
+
+svg{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 3px;
+}
